@@ -1,0 +1,13 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/modules.xml
+/contentModel.xml
+/projectSettingsUpdater.xml
+/.idea.codelab1-final.iml
+# Datasource local storage ignored files
+/../../../../../../../../../../../../:\Users\Alise\Dropbox\My PC (DESKTOP-5H29H7I)\Desktop\gc\summer code class\codelab1-final\.idea\.idea.codelab1-final\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
