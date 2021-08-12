@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class SugarControl : MonoBehaviour 
 { 
@@ -8,6 +10,7 @@ public class SugarControl : MonoBehaviour
     GameObject target; //gameobject to follow (mickey) 
     float moveSpeed; //how fast sugar will go 
     Vector3 directionToTarget; //var directionToTarget
+    public int sugarHealth = 1;
     
     void Start () {
         target = GameObject.Find ("mickey"); //look for mick, our target 
@@ -19,6 +22,7 @@ public class SugarControl : MonoBehaviour
     // Update is called once per frame
     void Update () {
         MoveSugar (); //move sugar
+        TestFunction(4);
     }
 
     void MoveSugar ()
@@ -30,5 +34,26 @@ public class SugarControl : MonoBehaviour
         }
         else //otherwise 
             rb.velocity = Vector3.zero; //sugar doesn't do anything 
+    }
+
+    void TestFunction(int a)
+    {
+        a = a + 5;
+        Debug.Log(a);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "pewBullet")
+        {
+            if (sugarHealth > 0)
+            {
+                sugarHealth--;
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 }

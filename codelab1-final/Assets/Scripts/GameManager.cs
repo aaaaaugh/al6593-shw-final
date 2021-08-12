@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
 
     public int score = 0; //mickey's current score
 
-    int targetScore = 3; //the target score to move to the next level 
+    public int targetScore = 3; //the target score to move to the next level 
 
     int currentLevel = 0; //current level 
 
@@ -29,18 +29,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
         if (score == targetScore)  //if the current score == the targetScore
         {
             currentLevel++; //increase the level number
+            Debug.Log(currentLevel);
             SceneManager.LoadScene(currentLevel); //go to the next level when u hit the prize
             targetScore += targetScore + targetScore/2; //update target score
         }
