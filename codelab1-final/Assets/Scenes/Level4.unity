@@ -415,6 +415,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2842348461162721225, guid: c576010c6bfa5e24bb76675e87cae4ce,
+        type: 3}
+      propertyPath: sugarHealth
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 601666205593526765, guid: c576010c6bfa5e24bb76675e87cae4ce,
         type: 3}
       propertyPath: m_IsTrigger

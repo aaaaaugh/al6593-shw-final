@@ -10,7 +10,7 @@ public class SugarControl : MonoBehaviour
     GameObject target; //gameobject to follow (mickey) 
     float moveSpeed; //how fast sugar will go 
     Vector3 directionToTarget; //var directionToTarget
-    public int sugarHealth = 1;
+    public int sugarHealth = 1; //int for sugar health
     
     void Start () {
         target = GameObject.Find ("mickey"); //look for mick, our target 
@@ -22,37 +22,33 @@ public class SugarControl : MonoBehaviour
     // Update is called once per frame
     void Update () {
         MoveSugar (); //move sugar
-        TestFunction(4);
     }
 
-    void MoveSugar ()
+    void MoveSugar()
     {
-        if (target != null) { //if mickey is around 
-            directionToTarget = (target.transform.position - transform.position).normalized; //target position - monster position
-            rb.velocity = new Vector2 (directionToTarget.x * moveSpeed, 
+        if (target != null)
+        {
+            //if mickey is around 
+            directionToTarget =
+                (target.transform.position - transform.position).normalized; //target position - monster position
+            rb.velocity = new Vector2(directionToTarget.x * moveSpeed,
                 directionToTarget.y * moveSpeed);
         }
         else //otherwise 
             rb.velocity = Vector3.zero; //sugar doesn't do anything 
     }
 
-    void TestFunction(int a)
+    private void OnTriggerEnter2D(Collider2D other) //when you do a collider 
     {
-        a = a + 5;
-        Debug.Log(a);
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.tag == "pewBullet")
+        if (other.tag == "pewBullet") //if other.tag is equal to pewbullet tag 
         {
-            if (sugarHealth > 0)
+            if (sugarHealth > 0) 
             {
-                sugarHealth--;
+                sugarHealth--; //sugar gets hit 
             }
-            else
+            else //otherwise
             {
-                Destroy(gameObject);
+                Destroy(gameObject); //DESTORRRYY
             }
         }
     }

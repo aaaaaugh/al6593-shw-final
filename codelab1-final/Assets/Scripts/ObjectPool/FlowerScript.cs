@@ -12,7 +12,7 @@ public class FlowerScript : MonoBehaviour
     const float MIN_Y = -10; //where to recycle the flower
 
     public float lifetime = 4;
-    private float timer;
+    private float timer; 
     float speed; 
 
     // Start is called before the first frame update
@@ -34,10 +34,10 @@ public class FlowerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
+        timer += Time.deltaTime; //how long the flowers are on screen before getting destroyed 
         if (timer >= lifetime)
         {
-            Destroy(gameObject);
+            Destroy(gameObject); //destroy the flowers
         }
         
         //move flower by speed

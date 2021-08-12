@@ -38,7 +38,7 @@ public class MickeyControl : MonoBehaviour
   {
     attack = GetComponent<BaseAttack>();
 
-    if (Input.GetKeyDown(KeyCode.Space))
+    if (Input.GetKeyDown(KeyCode.Space)) //when you press space
     {
       attack.Attack();
     }
